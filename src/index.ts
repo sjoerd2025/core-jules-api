@@ -78,7 +78,7 @@ export default {
 
       const julesSession = await julesApi.getSession(env, session.julesSessionId);
 
-      if (julesSession.outputs && julesSession.outputs.some((o: any) => o.pullRequest)) {
+      if (julesSession.outputs && julesSession.outputs.some((o: { pullRequest?: unknown }) => o.pullRequest)) {
         await env.STATUS_QUEUE.send({
           type: 'UPDATE_SESSION',
           sessionId: session.id,
