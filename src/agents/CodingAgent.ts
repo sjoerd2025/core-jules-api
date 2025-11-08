@@ -10,7 +10,7 @@ type SearchResult = {
   source: string;
 };
 
-export class CodingAgent extends McpAgent<Env, Record<string, any>, {}> {
+export class CodingAgent extends McpAgent<Env, { lastQuery: string; lastResults: SearchResult[] }, {}> {
   server = new McpServer({
     name: "Coding Agent",
     version: "2.0.0",
