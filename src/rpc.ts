@@ -83,6 +83,5 @@ export async function dispatchRPC(
   }
   // We perform a runtime check, so we can safely cast the method name.
   const handler = rpcRegistry[method as RpcMethodName];
-  // @ts-expect-error - We are not using env and ctx in this example, but they are passed for future use.
   return await handler(params, env, ctx);
 }
