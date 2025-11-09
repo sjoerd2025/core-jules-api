@@ -37,7 +37,7 @@ const listTasks = async (): Promise<z.infer<typeof S.ListTasksResponse>> => {
  * @param params - The parameters for the analysis.
  * @returns An analysis report.
  */
-const runAnalysis = async (params: unknown): Promise<z.infer<typeof S.AnalysisResponse>> => {
+const runAnalysis = async (params: unknown, _env: Env, _ctx: ExecutionContext): Promise<z.infer<typeof S.AnalysisResponse>> => {
   const input = S.AnalysisRequest.parse(params);
   // In a real app, you might fetch the task and perform a real analysis.
   return {
