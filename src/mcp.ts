@@ -5,7 +5,7 @@ import type { ExecutionContext } from "@cloudflare/workers-types";
 import zodToJsonSchema from "zod-to-json-schema";
 import * as S from "./schemas/apiSchemas";
 
-const mcpToolSchemas: Record<RpcMethodName, z.ZodType> = {
+const mcpToolSchemas = {
   createTask: S.CreateTaskRequest,
   listTasks: z.object({}), // listTasks has no parameters
   runAnalysis: S.AnalysisRequest,
