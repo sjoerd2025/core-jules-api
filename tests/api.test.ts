@@ -45,6 +45,6 @@ describe("Worker", () => {
     expect(resp.status).toBe(200);
     const json: any = await resp.json();
     expect(json.success).toBe(true);
-    expect(json.tasks.length).toBeGreaterThan(0);
+    expect(json.tasks.some((task: any) => task.title === "another test task")).toBe(true);
   });
 });
